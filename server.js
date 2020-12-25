@@ -1,11 +1,24 @@
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
+function getDate()
+{
+  return new Date();
+}
 
 async function main() {
   while(true) {
-    console.log('Containers rule!');
-    await sleep(5000);
+    try{
+      console.log(getDate());
+      }
+      catch(e)
+      {
+        console.log(e);
+      }
+      finally
+      {
+        await sleep(5000);
+      }
   }
 }
 
